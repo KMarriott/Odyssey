@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flights: MyString
+  airbnb: MyString
+  user: one
+
+two:
+  flights: MyString
+  airbnb: MyString
+  user: two
