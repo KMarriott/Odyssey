@@ -1,2 +1,12 @@
 <p> users </p>
-  <%= @event %>
+
+
+
+<% @response.each do |response| %>
+  Title: <%= response["title"] %><br>
+  Image: <%= primary_image(response)["small"]["url"] %><br>
+  Time: <%= primary_time(response) %><br>
+  Address <%= primary_address(response) %><br>
+
+  <br>
+<% end %>

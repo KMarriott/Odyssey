@@ -1,1 +1,15 @@
 tripsdsfsdf
+
+
+
+
+
+<% @response.each do |response| %>
+<br>
+  Name: <%= response["listing"]["name"] %><br>
+  Bedrooms: <%= response["listing"]["bedrooms"] %><br>
+  Bathrooms: <%= response["listing"]["bathrooms"] %><br>
+  Beds: <%= response["listing"]["beds"] %><br>
+<br>
+
+<% end %>
