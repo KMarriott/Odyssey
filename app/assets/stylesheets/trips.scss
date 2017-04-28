@@ -1,3 +1,55 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+}
+.airSlider{
+  position: absolute;
+  left: 30%;
+  width: 40%;
+}
+#arrows {
+  top: 130px;
+}
+
+.w3-left{
+  position:relative;
+  top: 180px;
+  font-size: 50px;
+  margin-bottom: -200px;
+}
+
+
+.w3-right{
+  position:relative;
+  top: 310px;
+  left: 550px;
+  font-size: 50px;
+}
+.eventful {
+  width: 80%;
+  height: 200px;
+  overflow: scroll;
+}

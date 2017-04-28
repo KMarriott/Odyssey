@@ -2,11 +2,10 @@
 
 
 
-<% @response.each do |response| %>
-  Title: <%= response["title"] %><br>
-  Image: <%= primary_image(response)["small"]["url"] %><br>
-  Time: <%= primary_time(response) %><br>
-  Address <%= primary_address(response) %><br>
-
+<% @eventful.each do |eventful| %>
+  Title: <%= eventful["title"] %><br>
+  Image: <%= primary_image(eventful)["small"]["url"] %><br>
+  Time: <%= primary_time(eventful) %><br>
+  Address <%= primary_address(eventful) %><br>
   <br>
 <% end %>

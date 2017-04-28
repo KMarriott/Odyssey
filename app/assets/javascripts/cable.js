@@ -11,3 +11,9 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+$('.mySlides').click(function () {
+	console.log('clicked')
+  $('.myNames').hide();
+});
+console.log('working')
