@@ -41,9 +41,6 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.7.7.2)
       execjs
-<<<<<<< HEAD
-    aws_cf_signer (0.1.3)
-=======
     aws-sdk (2.9.12)
       aws-sdk-resources (= 2.9.12)
     aws-sdk-core (2.9.12)
@@ -52,22 +49,19 @@ GEM
     aws-sdk-resources (2.9.12)
       aws-sdk-core (= 2.9.12)
     aws-sigv4 (1.0.0)
->>>>>>> 0ba85dd34bc218df955b5d5950cce3e327bd83be
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
     bindex (0.5.0)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.3)
     byebug (9.0.6)
-<<<<<<< HEAD
+    climate_control (0.1.0)
     cloudinary (1.7.0)
       aws_cf_signer
       rest-client
-=======
-    climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
->>>>>>> 0ba85dd34bc218df955b5d5950cce3e327bd83be
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -86,6 +80,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -118,6 +114,7 @@ GEM
     minitest (5.10.1)
     multi_json (1.12.1)
     multi_xml (0.6.0)
+    multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.0.0)
     nokogiri (1.7.1)
@@ -174,6 +171,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    skyscanner (0.2.0)
+      faraday
+      multi_json
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -230,6 +230,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.2)
   sass-rails (~> 5.0)
+  skyscanner
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

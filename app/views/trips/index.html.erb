@@ -1,64 +1,24 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="navbar-header navbar-center">
-        <a class="navbar-brand " href="#">City?</a>
-      </div>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-
 
 <img class="center-block img-fluid full-screen" src="https://68.media.tumblr.com/12c5f33ffa9a36b2524a215913ee0706/tumblr_op2xhfqRfi1qerjyso1_1280.png" alt="First slide">    </div>
+<div class="col-md-5 col-md-offset-5">
+    <h2>Paris <%= @paris_depart %></h2>
+    </div>
 
-    <h2><center>  8/13/2017 - 8/20/2017</center> </h2>
-</div>
-
-
-
+<div id="flights"
 <div class="row">
-  <div class="col-md-1 col-md-offset-4">
-    <a href="#" class="thumbnail">
-      <img src=<%=image_path("cuba.jpg")%>>
-    </a>
+  <div class="col-md-5 col-md-offset-5">
+      <% @paris.each do |sky| %>
+        <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
+    <h6>  Price: <%= sky["MinPrice"] %></h6>
+      Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
+      direct <%= sky["Direct"] %><br>
+      <br>
+      <% end %>
   </div>
-  <h2>  Flight 1 - Info About Flight </h2>
 </div>
-<div class="row">
-  <div class="col-md-1 col-md-offset-4">
-    <a href="#" class="thumbnail">
-      <img src=<%=image_path("cuba.jpg")%>>
-    </a>
-  </div>
-  <h2>  Flight 3 - Info About Flight</h2>
 </div>
-<div class="row">
-  <div class="col-md-1 col-md-offset-4">
-    <a href="#" class="thumbnail">
-      <img src=<%=image_path("cuba.jpg")%>>
-    </a>
-  </div>
-  <h2>  Flight 3 - Info About Flight </h2>
-</div>
+
+
 
 <div class="row">
   <div class="col-md-8 col-md-offset-3">
@@ -66,7 +26,7 @@
       <% @eventful.each do |eventful| %>
         Title: <%= eventful["title"] %><br>
             <a href="#" class="thumbnail">
-              <img src= <%= primary_image(eventful)["small"]["url"] %>>
+              <img class="eventful_image" src= <%= eventful_image(eventful)["large"]["url"] %>>
             </a>
         Time: <%= primary_time(eventful) %><br>
         Address <%= primary_address(eventful) %><br>
@@ -91,8 +51,8 @@
             <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
           </div>
             <img  title="thisworks" src=<%= response["listing"]["picture_url"] %>>
-            Bedrooms: <%= response["listing"]["bedrooms"] %>/
-            Bathrooms: <%= response["listing"]["bathrooms"] %>/
+            Bedrooms: <%= response["listing"]["bedrooms"] %>
+            Bathrooms: <%= response["listing"]["bathrooms"] %>
             Beds: <%= response["listing"]["beds"] %>
           </div>
             <br>

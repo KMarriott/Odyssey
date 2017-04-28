@@ -1,6 +1,6 @@
 module TripsHelper
-  def  primary_image(response)
-      response = response["image"] || {"small" => { "url" => "http://i.imgur.com/XvtEi2t.jpg"}}
+  def  eventful_image(response)
+      response = response["image"] || {"large" => { "url" => "http://i.imgur.com/XvtEi2t.jpg"}}
 
   end
 
