@@ -10,6 +10,7 @@ end
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+>>>>>>> 8e88aa9634bd7b09a539a413d2188f0b320b3ead
 gem 'devise'
 gem 'httparty'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
