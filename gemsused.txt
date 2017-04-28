@@ -1,0 +1,8 @@
+Gems Used:
+Geocoder - for Getting Locations - http://www.rubygeocoder.com/
+HTTParty - for calling API - 
+skyscanner - Ruby gem for calling skyscanner API - https://github.com/axic/skyscanner
+
+gem 'paperclip'
+
+gem 'aws-sdk', '~> 2.3'

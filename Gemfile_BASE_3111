@@ -4,17 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
-gem 'skyscanner'
-
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
-
 gem 'devise'
 gem 'httparty'
-gem 'cloudinary'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record

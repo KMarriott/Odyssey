@@ -5,16 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
-gem 'skyscanner'
-
+<<<<<<< HEAD
+=======
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+>>>>>>> 8e88aa9634bd7b09a539a413d2188f0b320b3ead
 gem 'devise'
 gem 'httparty'
-gem 'cloudinary'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record

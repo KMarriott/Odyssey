@@ -9,6 +9,11 @@ Things you may want to cover:
 
 * System dependencies
 
+Ruby Gems Used:
+Geocoder - for Getting Locations - http://www.rubygeocoder.com/
+HTTParty - for calling API - 
+skyscanner - Ruby gem for calling skyscanner API - https://github.com/axic/skyscanner
+
 * Configuration
 
 * Database creation
@@ -22,3 +27,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+=================================
+
+
+Set up
+
+bundle install
+rails db:create
+rails db:migrate
