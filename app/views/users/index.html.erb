@@ -1,2 +1,11 @@
-<p> users </p>
-  <%= @event %>
+
+
+
+
+<% @eventful.each do |eventful| %>
+  Title: <%= eventful["title"] %><br>
+  Image: <%= primary_image(eventful)["small"]["url"] %><br>
+  Time: <%= primary_time(eventful) %><br>
+  Address <%= primary_address(eventful) %><br>
+  <br>
+<% end %>
