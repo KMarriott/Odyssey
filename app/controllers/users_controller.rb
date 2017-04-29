@@ -5,4 +5,6 @@ class UsersController < ApplicationController
     @response = @response["events"]["event"]
 
   end
+
+
 end
