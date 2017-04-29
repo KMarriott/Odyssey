@@ -1,0 +1,28 @@
+
+
+<form action='/users' method='POST'>
+update: <br>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+first name:<%= @users[:first_name] %> <br>
+<input name='first_name'><br>
+
+last name:<%= @users[:last_name] %> <br>
+<input name='last_name'><br>
+
+image:<%= @users[:image] %> <br>
+<input name='image'><br>
+
+flight:<%= @users[:flight] %> <br>
+<input name="flight"><br>
+
+flight_address:<%= @users[:flight_address] %> <br>
+<input name="flight_address"><br>
+
+address:<%= @users[:address] %> <br>
+<input name=":address"><br>
+
+profile:<%= @users[:profile_image] %> <br>
+<input name=":profile_image"
+
+<button>Submit</button>
+</form>
