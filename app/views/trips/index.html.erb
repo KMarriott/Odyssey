@@ -1,1 +1,64 @@
-tripsdsfsdf
+
+<img class="center-block img-fluid full-screen" src="https://68.media.tumblr.com/12c5f33ffa9a36b2524a215913ee0706/tumblr_op2xhfqRfi1qerjyso1_1280.png" alt="First slide">    </div>
+<div class="col-md-5 col-md-offset-5">
+    <h2>Paris <%= @paris_depart %></h2>
+    </div>
+
+<div id="flights"
+<div class="row">
+  <div class="col-md-5 col-md-offset-5">
+      <% @paris.each do |sky| %>
+        <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
+    <h6>  Price: <%= sky["MinPrice"] %></h6>
+      Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
+      direct <%= sky["Direct"] %><br>
+      <br>
+      <% end %>
+  </div>
+</div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-3">
+    <div class="eventful"
+      <% @eventful.each do |eventful| %>
+        Title: <%= eventful["title"] %><br>
+            <a href="#" class="thumbnail">
+              <img class="eventful_image" src= <%= eventful_image(eventful)["large"]["url"] %>>
+            </a>
+        Time: <%= primary_time(eventful) %><br>
+        Address <%= primary_address(eventful) %><br>
+        <br>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="airSlider"
+      <center>
+        <div class="w3-content w3-display-container">
+        <% @response.each do |response| %>
+        <ul>
+          <li>
+            <div class="mySlides">
+            <h2> Name: <%= response["listing"]["name"] %></h2>
+            <div id="row">
+            <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+          </div>
+            <img  title="thisworks" src=<%= response["listing"]["picture_url"] %>>
+            Bedrooms: <%= response["listing"]["bedrooms"] %>
+            Bathrooms: <%= response["listing"]["bathrooms"] %>
+            Beds: <%= response["listing"]["beds"] %>
+          </div>
+            <br>
+          </li>
+          <% end %>
+        </ul>
+      </center>
+    </div>
+  </div>
