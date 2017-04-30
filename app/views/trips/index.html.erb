@@ -2,7 +2,30 @@
 <img class="center-block img-fluid full-screen" src="https://68.media.tumblr.com/12c5f33ffa9a36b2524a215913ee0706/tumblr_op2xhfqRfi1qerjyso1_1280.png" alt="First slide">    </div>
 <div class="col-md-5 col-md-offset-5">
     <h2>Paris <%= @paris_depart %></h2>
-    </div>
+</div>
+
+
+<div id="ed">
+  <img src="http://i.imgur.com/DGn5YWT.jpg" width="150"  align="left">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <img src="http://i.imgur.com/DGn5YWT.jpg" width="150"  align="right">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+
+
+
+
+
+
+
+<form action='/trips' method='POST'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
 <div id="flights"
 <div class="row">
@@ -11,9 +34,17 @@
         <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
     <h6>  Price: <%= sky["MinPrice"] %></h6>
       Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
-      direct <%= sky["Direct"] %><br>
-      <br>
-      <% end %>
+      direct <%= sky["Direct"] %>
+
+
+      <div class="form-check">
+  <label class="form-check-label">
+  Save flight: <input name='flights' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>"><br>
+  <input name='user_id' value="<%= @user.id %>"><br>
+
+  </label>
+</div>
+    <% end %>
   </div>
 </div>
 </div>
@@ -22,7 +53,7 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-3">
-    <div class="eventful"
+    <div class="eventful">
       <% @eventful.each do |eventful| %>
         Title: <%= eventful["title"] %><br>
             <a href="#" class="thumbnail">
@@ -30,12 +61,11 @@
             </a>
         Time: <%= primary_time(eventful) %><br>
         Address <%= primary_address(eventful) %><br>
+
         <br>
       <% end %>
     </div>
-
   </div>
-
 </div>
 
 <div class="airSlider">
@@ -54,6 +84,9 @@
             Bedrooms: <%= response["listing"]["bedrooms"] %>
             Bathrooms: <%= response["listing"]["bathrooms"] %>
             Beds: <%= response["listing"]["beds"] %>
+            <label class="form-check-label">
+            Save airbnb: <input name='airbnb' type="checkbox" value="<%= response["listing"]["picture_url"] %>"><br>
+            </label>
           </div>
             <br>
           </li>
@@ -63,6 +96,44 @@
     </div>
   </div>
 
+
   <div>
     <%= render partial: 'trips/widget_paris' %>
   </div>
+
+  <button class="btn btn-primary btn-lg">Submit</button>
+</form>
+
+
+
+
+
+
+<div id="comments">
+  <center>
+<form action='/comments' method='POST'>
+  add a comp: <br>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  place: <input name='place' value="cuba"><br>
+  comment: <input name='comment' type="this is the comment"><br>
+  <input name='user_id' value="<%= @user.id %>"><br>
+  <button class="btn btn-primary btn-lg">Submit</button>
+
+</form>
+
+
+ <% @comments.each do |comment| %>
+  <div class="card-block">
+    <img src="http://i.imgur.com/DGn5YWT.jpg" width="100"  align="left">
+    <h4 class="card-title">User Id: <%= @user.id %></h4>
+    <p class="card-text"> Comment: <%= comment['comment'] %></p><br>
+    <%= link_to "Remove Comment", comment, method: :delete %><br>
+
+  </div>
+<% end %>
+
+
+
+
+</div>
+>>>>>>> eb97695b5f0d5d28876cecd001389bab26190d7f
