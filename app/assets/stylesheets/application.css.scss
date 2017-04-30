@@ -25,11 +25,12 @@
 
 .logo {
 	text-align: center; 
-	font-family: Avenir; 
+	font-family: Avenir;
+	margin-left: 146px; 
 }
 
 .nav  {
-
+ 	padding-top: 20px;
     font-size: 20px;
     padding-left: 20px;
    
@@ -116,6 +117,24 @@
 .icon {
 	padding: 30px;
 }
+
+.left .carousel-control{
+	margin-top: 30 px;
+}
+
+.right .carousel-control{
+	margin-top: 30 px;
+}
+
+.navbar-text.pull-right {
+	text-align:center; 
+}
+
+.carousel-indicators {
+	margin: 0 auto;
+}
+
+
 
 
 
