@@ -44,9 +44,8 @@
 
 .viewmore {
 
-	text-align: center;
-    top: 50%;
-    left: 50%;
+	margin: 0 auto;
+	z-index: 3;
 
 }
 
@@ -177,6 +176,10 @@
 .skyscannerwidget {
 	width: 800px;
 	margin-left: 20%;
+}
+
+.center_div {
+	text-align:center;
 }
 
 
