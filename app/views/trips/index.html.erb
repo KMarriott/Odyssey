@@ -1,13 +1,14 @@
 <nav class="nav">
     <a class="anav" style=" padding:20px; word-spacing: 10px; text-decoration: none; color: black; font-family: avenir " href="/"> Home </a>
-    <a class="anav" style="word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> Locations </a>
+    <a class="anav" style="word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href="">
+
+     Locations
+     </a>
     <a  style=" word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> About </a>
     <a href="/users"><img id = "profile-icon" src="https://68.media.tumblr.com/5d025161f0f362f0f37a4c36eed5e152/tumblr_oo85afcHW91qerjyso1_250.png">
     </a>
     <h1 class = "logo">Odyssey</h1>
   </nav>
-
-
 
 
 
@@ -30,8 +31,17 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 
+<div class="date_picker">
 
+  <form action="/trips" method='POST'>
+    Flight leave:
+    <input type="date" name="flight_leave" value="">
+    Flight return:
+    <input type="date" name="flight_return">
 
+    <input type="submit">
+  </form>
+</div><br>
 
 
 
@@ -40,27 +50,38 @@
 <form action='/trips' method='POST'>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-<div id="flights"
+<div id="flights">
+<!--   <h3>Find flights!</h3>
+ -->
 <div class="row">
   <div class="col-md-5 col-md-offset-5">
       <% @paris.each do |sky| %>
         <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
-    <h6>  Price: <%= sky["MinPrice"] %></h6>
-      Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
-      direct <%= sky["Direct"] %>
+        <h6>  Price: <%= sky["MinPrice"] %></h6>
+        Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
+        direct <%= sky["Direct"] %>
+
+<!--   <h3>See upcoming events</h3>
+ -->
+  <div class="form-check">
+        <label class="form-check-label">
+        Save flight: <input name='flights' id= "flight_date" type="checkbox" value="<%= sky["OutboundLeg"]["DepartureDate"] %>"><br>
+
+<!--         <input name='user_id' value="<%= @user.id %>" type="submit">
+ -->
+        <br>
 
 
-      <div class="form-check">
-  <label class="form-check-label">
-  Save flight: <input name='flights' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>"><br>
-  <input name='user_id' value="<%= @user.id %>"><br>
-
-  </label>
-</div>
+        </label>
+      </div>
     <% end %>
   </div>
+        <input type="hidden" name="user_id" value="<%= @user.id %>" type="submit">
+
 </div>
 </div>
+<br>
+
 
 
 
@@ -78,6 +99,8 @@
   </div>
 </div>
 
+<!-- adding a row class for the air-slider -->
+<div class="row">
 <div class="airSlider">
       <center>
         <div class="w3-content w3-display-container">
@@ -106,23 +129,21 @@
     </div>
   </div>
 
+</div>
+
 
   <div>
     <%=render 'widget_paris.index.html.erb'%>
   </div>
 
-  <button class="btn btn-primary btn-lg">Submit</button>
+  <button class="btn btn-primary btn-lg">Submit all</button>
 </form>
-
-
-
-
 
 
 <div id="comments">
   <center>
 <form action='/comments' method='POST'>
-  add a comp: <br>
+  add a comment: <br>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   place: <input name='place' value="paris"><br>
   comment: <input name='comment' type="this is the comment"><br>
@@ -146,4 +167,3 @@
 
 
 </div>
->>>>>>> eb97695b5f0d5d28876cecd001389bab26190d7f
