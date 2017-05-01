@@ -150,6 +150,35 @@
 	padding: 20px;
 }
 
+.flightform {
+	display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+.return {
+	float: right;
+}
+
+.outbound {
+	width: 156px;
+}
+
+.center-block {  
+  display: block;  
+  margin-right: auto;  
+  margin-left: auto;  
+}  
+
+.round-trip-arrows {
+	float: right;
+}
+
+.skyscannerwidget {
+	width: 800px;
+	margin-left: 20%;
+}
+
 
 
 
