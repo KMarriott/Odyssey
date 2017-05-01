@@ -21,20 +21,25 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
+  position: absolute;
 }
 
 .logo {
-	text-align: center; 
+	text-align: center;
 	font-family: Avenir;
-	margin-left: 146px; 
+	margin-left: 146px;
 }
 
 .nav  {
  	padding-top: 20px;
     font-size: 20px;
     padding-left: 20px;
-   
+    // border: 3px dotted red;
+    // z-index: 3;
+}
 
+.navbar-text{
+  margin-top: 8px;
 }
 
 .viewmore {
@@ -42,27 +47,29 @@
 	text-align: center;
     top: 50%;
     left: 50%;
-	
+
 }
 
 #profile-icon {
 
 	width: 40px;
 	height: 40px;
-	float: right; 
-	margin-top: 20px;
-	margin-right: 20px; 
-
+  // vertical-align: right;
+  clear: both;
+	float: right;
+  // padding-right: 20px;
+	// margin-top: 20px;
+	margin-right: 35px;
 }
 
-.carousel { 
+.carousel {
 
-	position:absolute; 
-	width:100%; 
-	height:100%; 	
-	z-index: -99; 
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index: -99;
 
-	} 
+	}
 
 .buttonwrapper {
 
@@ -78,7 +85,7 @@
 }
 
 .profile-on-boarding {
-	font-family: avenir; 
+	font-family: avenir;
 }
 
 .letter-head {
@@ -101,7 +108,7 @@
 .yourtrips{
 	font-family: Avenir;
 	text-align: Center;
-	
+
 }
 
 .borderbottom{
@@ -127,7 +134,7 @@
 }
 
 .navbar-text.pull-right {
-	text-align:center; 
+	text-align:center;
 }
 
 .carousel-indicators {
