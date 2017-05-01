@@ -1,0 +1,2 @@
+module PapercliptestHelper
+end
