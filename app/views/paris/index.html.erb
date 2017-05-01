@@ -18,12 +18,6 @@
 </div>
 
 
-
-
-
-
-
-
 <form action='/trips' method='POST'>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
@@ -40,7 +34,6 @@
       <div class="form-check">
   <label class="form-check-label">
   Save flight: <input name='flights' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>"><br>
-  <input name='user_id' value="<%= @user.id %>"><br>
 
   </label>
 </div>
@@ -72,7 +65,7 @@
         <ul>
           <li>
             <div class="mySlides">
-            <h2> Name: <%= response["listing"]["name"] %></h2>
+            <h2> <%= response["listing"]["name"] %></h2>
             <div id="row">
             <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
             <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
@@ -82,8 +75,7 @@
             Bathrooms: <%= response["listing"]["bathrooms"] %>
             Beds: <%= response["listing"]["beds"] %>
             <label class="form-check-label">
-            Save airbnb: <input name='airbnb' type="checkbox" value="<%= response["listing"]["picture_url"] %>"><br>
-            </label>
+            Save: <input name='airbnb' type="checkbox" value="<%= response["listing"]["picture_url"] %>"><br>
           </div>
             <br>
           </li>
@@ -109,7 +101,6 @@
   comment: <input name='comment' type="this is the comment"><br>
   <input name='user_id' value="<%= @user.id %>"><br>
   <button class="btn btn-primary btn-lg">Submit</button>
-
 </form>
 
 

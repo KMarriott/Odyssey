@@ -1,0 +1,20 @@
+
+<img class="center-block img-fluid full-screen" src="https://68.media.tumblr.com/12c5f33ffa9a36b2524a215913ee0706/tumblr_op2xhfqRfi1qerjyso1_1280.png" alt="First slide">    </div>
+<div class="col-md-5 col-md-offset-5">
+    <h2>Paris <%= @paris_depart %></h2>
+
+
+
+
+
+  <%= form_for :trips, url:"/paris" do |f| %>
+    <div class="field">
+
+      <%= text_field_tag :first_name, value = "my name" %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
