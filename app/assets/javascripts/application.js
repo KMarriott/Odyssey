@@ -25,25 +25,44 @@ $(document).ready(function(){
   $('.dropdown-menu').dropdown('toggle')
     // $('.dropdown-menu').dropdown()
 
-});
+  });
 
+
+
+function getquotes(){
+var settings = {
+  "crossDomain": true,
+  "url": "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/UK/anywhere/anytime/anytime?apiKey=od357280409789380362594759932174",
+  "method": "GET",
+  "headers": {
+    "cache-control": "no-cache"
+  }
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+console.log('ok')
+}
+
+getquotes()
+console.log("ork")
 
 var slideIndex = 1;
 showDivs(slideIndex);
 
 function plusDivs(n) {
-    showDivs(slideIndex += n);
+  showDivs(slideIndex += n);
 }
 
 function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
 }
 
 
