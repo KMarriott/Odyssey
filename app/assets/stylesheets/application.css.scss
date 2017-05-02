@@ -27,7 +27,9 @@
 .logo {
 	text-align: center;
 	font-family: Avenir;
-	margin-left: 146px;
+  width: 142px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav  {
@@ -42,9 +44,8 @@
 
 .viewmore {
 
-	text-align: center;
-    top: 50%;
-    left: 50%;
+	margin: 0 auto;
+	z-index: 3;
 
 }
 
@@ -55,6 +56,7 @@
     clear: both;
 	float: right;
 	margin-right: 35px;
+
 }
 
 .carousel {
@@ -70,6 +72,58 @@
 	left:41%;
 	padding-bottom: 30px
 	}
+
+  .carousel-indicators {
+
+    margin-left: auto;
+    margin-right: auto;
+    // margin-bottom: 20%;
+    // border: 5px dotted red;
+
+  }
+
+.carousel-caption {
+
+  font-family: "Avenir" ;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  text-decoration-color: black;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  top: 0px;
+  margin-top: 33%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  // text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.moreinfo {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: black;
+}
 
 .carousel-control.left, .carousel-control.right {
    background-image: none
@@ -133,6 +187,12 @@
 }
 
 
+
+#flights {
+  margin-left: 10px;
+}
+
+
 #ed {
 	margin-top: 45%;
 	padding: 20px;
@@ -142,9 +202,45 @@
 	padding: 20px;
 }
 
+
+.flightform {
+	display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+.return {
+	float: right;
+}
+
+.outbound {
+	width: 156px;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.round-trip-arrows {
+	float: right;
+}
+
+.skyscannerwidget {
+	width: 800px;
+	margin-left: 20%;
+}
+
+.center_div {
+	text-align:center;
+}
+
+
 #flights {
   margin-left: 10px;
 }
+
 
 
 .date_picker {
