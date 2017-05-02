@@ -20,6 +20,7 @@ $(document).ready(function(){
 
 	$('.carousel').carousel();
 
+
   // $('.dropdown-menu').dropdown()
   // $('.dropdown-toggle').dropdown()
   $('.dropdown-menu').dropdown('toggle')

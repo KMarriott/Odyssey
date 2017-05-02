@@ -20,7 +20,11 @@ class ParisController < ApplicationController
     @comments = Comment.all
   end
   def show
+    @paris = Pari.find_by(id: params[:id])
       @users = User.find_by(id: params[:id])
+
+      @userupdate = Trip.new
+
 
   end
 
@@ -43,18 +47,41 @@ class ParisController < ApplicationController
 
     @paris_depart =  @paris[0]["OutboundLeg"]["DepartureDate"]
 
+    Pari.create(flight: params[:flight],
+                address: params[:address],
+                name: params[:name],
+                image: params[:image],
+                flight: params[:flight],
+                flight_date: params[:flight_date],
+                address: params[:address],
+                profile_image: params[:address],
+                user_id: current_user.id)
 
+    user_id = current_user.id
+    redirect_to "/users/#{user_id}"
+    # redirect_to "/paris/#{Pari.maximum(:id)}"
+  end
 
+  def edit
+    puts params
+    trip_id = params[:id]
+    @paris = Pari.find(params[:id])
+    @user = current_user
+    redirect_to "/trips"
   end
 
   def update
-      @trips = Trip.find(params[:id])
-        if @trips.update_attributes(
-        first_name:params[:first_name])
+    @paris =
+      Pari.find(params[:id])
+        if @paris.update(
+          paris_params
+          )
       else
       render 'edit'
     end
-      redirect_to "/rocks"
-    end
-
+  end
+  private
+  def paris_params
+    params.require(:pari).permit(:name,:image,:flight,:flight_date,:address,:profile_image,:user_id)
+  end
 end

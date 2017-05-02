@@ -20,7 +20,8 @@ class TripsController < ApplicationController
     @comments = Comment.all
   end
   def show
-      @users = User.find_by(id: params[:id])
+      # @users = User.find_by(id: params[:id])
+      @trip = Trip.where(:id => params[:id])
 
   end
 
@@ -47,10 +48,22 @@ class TripsController < ApplicationController
     @user = current_user
     Trip.create(flights: params[:flights],
                 airbnb: params[:airbnb],
-                user_id: 1)
+                first_name: params[:first_name],
+                user_id: current_user.id)
   end
+
   def update
-        Trip.create(first_name: params[:first_name])
+    @trip = Trip.where(:id => params[:id])
+    if @trip.update(trip_params)
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to ("/")
+  end
+end
+
+  private
+  def trip_params
+    params.require(:trip).permit(:user_id, :first_name)
   end
 
 

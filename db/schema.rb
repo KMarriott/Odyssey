@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170430170713) do
+ActiveRecord::Schema.define(version: 20170501212352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,56 @@ ActiveRecord::Schema.define(version: 20170430170713) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "cuba_trips", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.string   "image"
+    t.string   "flight"
+    t.string   "flight_date"
+    t.string   "address"
+    t.string   "profile_image"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_cuba_trips_on_user_id", using: :btree
+  end
+
+  create_table "oahu", force: :cascade do |t|
+    t.string  "name"
+    t.string  "image"
+    t.string  "flight"
+    t.string  "flight_date"
+    t.string  "address"
+    t.string  "profile_image"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_oahu_on_user_id", using: :btree
+  end
+
+  create_table "oahus", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.string   "image"
+    t.string   "flight"
+    t.string   "flight_date"
+    t.string   "address"
+    t.string   "profile_image"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_oahus_on_user_id", using: :btree
+  end
+
+  create_table "paris", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.string   "image"
+    t.string   "flight"
+    t.string   "flight_date"
+    t.string   "address"
+    t.string   "profile_image"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_paris_on_user_id", using: :btree
   end
 
   create_table "trips", force: :cascade do |t|
@@ -58,5 +108,9 @@ ActiveRecord::Schema.define(version: 20170430170713) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "cuba_trips", "users"
+  add_foreign_key "oahu", "users"
+  add_foreign_key "oahus", "users"
+  add_foreign_key "paris", "users"
   add_foreign_key "trips", "users"
 end
