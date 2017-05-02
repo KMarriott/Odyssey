@@ -1,0 +1,35 @@
+
+<% getSkyscannerQuotes("anytime", "anytime", 6) %>
+
+<div class="date_picker">
+
+  <form action="/trips">
+    Flight leave:
+    <input type="date" name="flight_leave" value="">
+    Flight return:
+    <input type="date" name="flight_return">
+
+    <input type="submit" class= "flight_submit">
+  </form>
+</div><br>
+
+  <div id="flights"
+  <div class="row">
+    <div class="col-md-5 col-md-offset-5">
+      <% @paris.each do |sky| %>
+      <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
+      <h6>  Price: <%= sky["MinPrice"] %></h6>
+      Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
+      direct <%= sky["Direct"] %>
+
+
+      <div class="form-check">
+        <label class="form-check-label">
+          Save flight: <input name='flights' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>"><br>
+        </label>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
