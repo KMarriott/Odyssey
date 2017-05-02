@@ -24,3 +24,4 @@ $('.hide').click(function () {
   console.log("clicked")
   $(.hide).hide('magictime puffIn');
 });
+console.log('working')
