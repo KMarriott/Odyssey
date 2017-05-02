@@ -1,17 +1,6 @@
 
 <% getSkyscannerQuotes("anytime", "anytime", 6) %>
 
-<div class="date_picker">
-
-  <form action="/trips">
-    Flight leave:
-    <input type="date" name="flight_leave" value="">
-    Flight return:
-    <input type="date" name="flight_return">
-
-    <input type="submit" class= "flight_submit">
-  </form>
-</div><br>
 
   <div id="flights"
   <div class="row">
@@ -33,3 +22,10 @@
     </div>
   </div>
 </div>
+
+
+<form accept-charset="UTF-8" action="/" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+  Form contents
+</form>

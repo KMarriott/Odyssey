@@ -1,0 +1,9 @@
+ <nav class="nav">
+
+    <a class="anav" style=" padding:20px; word-spacing: 10px; text-decoration: none; color: black; font-family: avenir " href="/"> Home </a>
+    <a class="anav" style="word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> Locations </a>
+    <a  style=" word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> About </a>
+    <a href="/users"><img id = "profile-icon" src="https://68.media.tumblr.com/5d025161f0f362f0f37a4c36eed5e152/tumblr_oo85afcHW91qerjyso1_250.png">
+    </a>
+    <h1 class = "logo">Odyssey</h1>
+  </nav>
