@@ -19,6 +19,7 @@
 $(document).ready(function(){
 
 	$('.carousel').carousel();
+  debugger
 
   // $('.dropdown-menu').dropdown()
   // $('.dropdown-toggle').dropdown()
