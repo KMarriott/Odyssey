@@ -68,12 +68,20 @@ Rails 5.0.2
 * System dependencies
 
 Ruby Gems Used:
+
 Paperclip-
+
 Cloudinary-
+
 Bootstrap-Sass 3.2.0
+
 Geocoder - for Getting Locations - http://www.rubygeocoder.com/
+
 HTTParty - for calling API - 
-skyscanner - Ruby gem for calling skyscanner API - https://github.com/axic/skyscanner
+
+skyscanner - Ruby gem for calling skyscanner API - 
+
+https://github.com/axic/skyscanner
 
 * Configuration
 
