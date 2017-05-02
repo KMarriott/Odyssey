@@ -16,4 +16,12 @@ $('.mySlides').click(function () {
 	console.log('clicked')
   $('.myNames').hide();
 });
+
+console.log('working')
+
+
+$('.hide').click(function () {
+  console.log("clicked")
+  $(.hide).hide('magictime puffIn');
+});
 console.log('working')

@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(version: 20170501212352) do
     t.index ["user_id"], name: "index_cuba_trips_on_user_id", using: :btree
   end
 
+  create_table "images", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "type"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.index ["user_id"], name: "index_images_on_user_id", using: :btree
+  end
+
   create_table "oahu", force: :cascade do |t|
     t.string  "name"
     t.string  "image"
@@ -103,12 +116,17 @@ ActiveRecord::Schema.define(version: 20170501212352) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "comments", "users"
   add_foreign_key "cuba_trips", "users"
+  add_foreign_key "images", "users"
   add_foreign_key "oahu", "users"
   add_foreign_key "oahus", "users"
   add_foreign_key "paris", "users"

@@ -4,14 +4,14 @@ class CommentsController < ApplicationController
 
   def create
     @user = current_user
-    Comment.create(place: params[:place],
+    Comment.create(place: @place,
                 comment: params[:comment],
-                user_id: 1)
+                user_id: current_user.id)
   end
 
   def destroy
   Comment.destroy(params[:id])
-  redirect_to "/trips"
+  redirect_to :back
   end
 
 end

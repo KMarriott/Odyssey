@@ -15,9 +15,10 @@ class ParisController < ApplicationController
     paris = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "FR", :destinationPlace => "JFK", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
     @paris = sky.values.first[0..4]
 
-    @paris_depart =  @paris[0]["OutboundLeg"]["DepartureDate"]
+    @paris_depart =  @paris[0]["OutboundLeg"]["DepartureDate"][0..9]
 
     @comments = Comment.all
+    @place = "paris"
   end
   def show
     @paris = Pari.find_by(id: params[:id])

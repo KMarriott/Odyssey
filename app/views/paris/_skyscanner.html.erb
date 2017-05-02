@@ -1,12 +1,10 @@
 
-<% getSkyscannerQuotes("anytime", "anytime", 6) %>
-
 
   <div id="flights"
   <div class="row">
-    <div class="col-md-5 col-md-offset-5">
+    <div class="col-md-5 col-md-offset-5 skyscannershow">
       <% @paris.each do |sky| %>
-      <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"][0..9] %></h4>
+      <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
       <h6>  Price: <%= sky["MinPrice"] %></h6>
       Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
       direct <%= sky["Direct"] %>
@@ -22,10 +20,3 @@
     </div>
   </div>
 </div>
-
-
-<form accept-charset="UTF-8" action="/" method="post">
-  <input name="utf8" type="hidden" value="&#x2713;" />
-  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
-  Form contents
-</form>
