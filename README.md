@@ -8,6 +8,7 @@ MoCSoW
 
 Must have:
 
+
   *Database with users, locations, and comments
 
   *Crud
@@ -24,9 +25,11 @@ Must have:
   
 Could have:
   
+  
    *Event API
    
 Should have:
+  
   
    *Facebook login capabilities
   
@@ -35,7 +38,8 @@ Should have:
    
 Would have:
 
-   *Credit card info
+
+   *ICE info--cards, etc.
 
 ***************************************
 
