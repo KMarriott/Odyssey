@@ -34,8 +34,6 @@
  	padding-top: 20px;
     font-size: 20px;
     padding-left: 20px;
-    
-    
 }
 
 .navbar-text{
@@ -54,31 +52,23 @@
 
 	width: 40px;
 	height: 40px;
-    
     clear: both;
 	float: right;
-    
-   
 	margin-right: 35px;
 }
 
 .carousel {
-
 	position:absolute;
 	width:100%;
 	height:100%;
 	z-index: -99;
-
-
 	}
 
 .buttonwrapper {
-
 	position: absolute;
 	bottom: 30px;
 	left:41%;
 	padding-bottom: 30px
-
 	}
 
 .carousel-control.left, .carousel-control.right {
@@ -144,7 +134,7 @@
 
 
 #ed {
-	margin-top: 60%;
+	margin-top: 45%;
 	padding: 20px;
 }
 
@@ -159,6 +149,7 @@
 
 .date_picker {
   margin-left: 10px;
+	position: absolute;
 
 }
 
@@ -171,5 +162,7 @@
 }
 .this{
 	position: absolute;
-
+}
+#hide{
+ display: none;
 }
