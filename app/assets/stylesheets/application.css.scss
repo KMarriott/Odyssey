@@ -27,9 +27,11 @@
 .logo {
 	text-align: center;
 	font-family: Avenir;
+
   width: 142px;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 .nav  {
@@ -196,6 +198,7 @@ a:active {
 #ed {
 	margin-top: 45%;
 	padding: 20px;
+	//position: absolute;
 }
 
 .merci-car {
@@ -261,4 +264,21 @@ a:active {
 }
 #hide{
  display: none;
+}
+.flight_box{
+	width: 400px;
+
+}
+.flight_box2{
+	width: 200px;
+
+}
+
+h2{
+	font-family: Avenir-book;
+	font-size: 60px;
+}
+
+#hide{
+	display: none;
 }
