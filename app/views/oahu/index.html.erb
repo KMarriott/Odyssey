@@ -60,7 +60,7 @@
  </div><br>
 
 
-
+<div id="hide">
 <div id="ed">
  <img class="le-tour-eiffel" src= <%=image_path('le-tour-eiffel.jpg')%> width="500px"  align="left">
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -89,7 +89,8 @@
 <div class="row">
   <div class="col-md-5 col-md-offset-5">
       <% @oahu.each do |sky| %>
-        <h4> oahu DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
+
+        <h4> Oahu Departure date: <%= format_date(sky) %></h4>
     <h6>  Price: <%= sky["MinPrice"] %></h6>
       Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
       direct <%= sky["Direct"] %>
@@ -114,6 +115,8 @@
     <div class="eventful">
       <% @eventful.each do |eventful| %>
         Title: <%= eventful["title"] %><br>
+
+        <% format_date(eventful) %>
         Time: <%= primary_time(eventful) %><br>
         Address <%= primary_address(eventful) %><br>
 
@@ -181,5 +184,5 @@
 
 
 
-
+</div>
 </div>
