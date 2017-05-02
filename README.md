@@ -1,4 +1,12 @@
-Shaza's branch
+
+Odyssey- a centralized planning app for trips
+
+Research and store all of your trip fliights, accomodations and events all in one place. Upload scans of your important documents and cards just in case. We even have destination specific suggestions for gear, and insider information for the hottest destinations.
+
+************************************
+MVP
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
