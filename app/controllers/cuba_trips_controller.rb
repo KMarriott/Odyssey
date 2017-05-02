@@ -60,6 +60,8 @@ class CubaTripsController < ApplicationController
                   address: params[:address],
                   profile_image: params[:address],
                   user_id: current_user.id)
+                  user_id = current_user.id
+                  redirect_to "/users/#{user_id}"
     end
 
     def edit
