@@ -17,3 +17,10 @@ $('.mySlides').click(function () {
   $('.myNames').hide();
 });
 console.log('working')
+
+
+
+$('.hide').click(function () {
+  console.log("clicked")
+  $(.hide).hide('magictime puffIn');
+});

@@ -4,5 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         has_many :oahu
+         has_many :oahus
+         has_many :paris
+         has_many :cuba_trips
+
 end

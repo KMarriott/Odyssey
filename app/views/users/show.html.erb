@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Odyssey: Your Profile</title>
+</head>
+<body>
+ <nav class="nav">
+    <a class="anav" style=" padding:20px; word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> Home </a>
+    <a class="anav" style="word-spacing: 30px; text-decoration: none; color: black; font-family: avenir" href=""> Locations </a>
+    <a  style=" word-spacing: 30px; text-decoration: none; color: black; font-family: avenir" href=""> About </a>
+    <img id = "profile-icon" src="https://68.media.tumblr.com/5d025161f0f362f0f37a4c36eed5e152/tumblr_oo85afcHW91qerjyso1_250.png">
+    <h1 class = "logo">Odyssey</h1>
+  </nav>
+
+  <div class="width-of-content">
+	  <img src="https://68.media.tumblr.com/7683d5405c0612c518fc4948a8d2dd97/tumblr_op6i7lndir1qerjyso1_400.png">
+
+	  <div class="clearfix">
+		  <h1 class="letter-head">Hi Katie!</h1>
+		  <p class= "profile-on-boarding">Here you can save all your trip prefrences and dates to have easy access to them when you are on the road! You can also upload photos of any important documentation you might want to have as digital copy in case of emergency. </p>
+	  </div>
+   <h3 class="yourtrips">Your Trips</h3>
+   <div class="borderbottom"></div>
+
+     <div class="user-appended-icons">
+        <img class= "icon" src="https://68.media.tumblr.com/937e244f67dd6d97d8563b6170874f0e/tumblr_op6nl0kggB1qerjyso2_400.png">
+
+
+        <img class= "icon" src="https://68.media.tumblr.com/dcc116a74882299febf641c61c9d1a88/tumblr_op6nl0kggB1qerjyso1_400.png">
+
+
+
+        <img class= "icon" src="https://68.media.tumblr.com/e8d6232ed85293ee9ad8f0fb92926c35/tumblr_op6nl0kggB1qerjyso3_400.png">
+
+     </div>
+     <div class="user-appended-icons">
+       OAHU:
+       <% if @user_trips_oahu %>
+         <% @user_trips_oahu.each do |x| %>
+           <%= x.name %>
+           <%= x.flight %>
+           <%= x.flight_date %>
+           <%= x.address %>
+           <br><br>
+         <% end %>
+       <% end %>
+
+
+
+       CUBA:
+       <% if @user_trips_cuba %>
+         <% @user_trips_cuba.each do |x| %>
+           <%= x.name %>
+           <%= x.flight %>
+           <%= x.flight_date %>
+           <%= x.address %>
+           <br><br>
+         <% end %>
+       <% end %>
+
+
+       PARIS:
+       <br>
+       <% if @user_trips_paris %>
+         <% @user_trips_paris.each do |x| %>
+           <%= x.name %>
+           <%= x.flight %>
+           <%= x.flight_date %>
+           <%= x.address %>
+           <br><br>
+         <% end %>
+       <% end %>
+
+     </div>
+
+     <h3 class="yourtrips">Documents</h3>
+   		<div class="borderbottom"></div>
+
+	   <div class="user-appended-icons">
+	   		<img class= "icon" src="https://68.media.tumblr.com/d852197b1907c0ff1aa11a4c260467a0/tumblr_op6qroqtBi1qerjyso2_400.png">
+	        <img class= "icon" src="https://68.media.tumblr.com/0a1627e34fca3b60fb39211a556d12bc/tumblr_op6qroqtBi1qerjyso1_400.png">
+
+	        <img class= "icon" src="">
+	   </div>
+
+</body>
+</html>
