@@ -1,0 +1,2 @@
+module CubaHelper
+end

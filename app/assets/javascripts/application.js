@@ -20,6 +20,11 @@ $(document).ready(function(){
 
 	$('.carousel').carousel();
 
+  // $('.dropdown-menu').dropdown()
+  // $('.dropdown-toggle').dropdown()
+  $('.dropdown-menu').dropdown('toggle')
+    // $('.dropdown-menu').dropdown()
+
 });
 
 
@@ -40,3 +45,5 @@ function showDivs(n) {
     }
     x[slideIndex-1].style.display = "block";
 }
+
+

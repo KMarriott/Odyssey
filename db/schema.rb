@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426200546) do
+ActiveRecord::Schema.define(version: 20170430170713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,15 @@ ActiveRecord::Schema.define(version: 20170426200546) do
     t.string   "flights"
     t.string   "airbnb"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "image"
+    t.string   "flight"
+    t.string   "flight_date"
+    t.string   "address"
+    t.string   "profile_image"
     t.index ["user_id"], name: "index_trips_on_user_id", using: :btree
   end
 
@@ -46,13 +53,6 @@ ActiveRecord::Schema.define(version: 20170426200546) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "image"
-    t.string   "flight"
-    t.string   "flight_date"
-    t.string   "address"
-    t.string   "profile_image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
