@@ -1,0 +1,2 @@
+class CubaTrip < ApplicationRecord
+end

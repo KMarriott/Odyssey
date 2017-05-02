@@ -1,0 +1,2 @@
+class Cuba < ApplicationRecord
+end
