@@ -56,6 +56,10 @@ class ParisController < ApplicationController
                 address: params[:address],
                 profile_image: params[:address],
                 user_id: current_user.id)
+
+    user_id = current_user.id
+    redirect_to "/users/#{user_id}"
+    # redirect_to "/paris/#{Pari.maximum(:id)}"
   end
 
   def edit
@@ -63,6 +67,7 @@ class ParisController < ApplicationController
     trip_id = params[:id]
     @paris = Pari.find(params[:id])
     @user = current_user
+    redirect_to "/trips"
   end
 
   def update

@@ -20,14 +20,7 @@ $('.mySlides').click(function () {
 console.log('working')
 
 
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/UK/anywhere/anytime/anytime?apiKey=od357280409789380362594759932174",
-  "method": "GET",
-  "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "c16e3e30-9364-d7aa-23cc-e476f49ccc58"
-  }
-}
-
+$('.hide').click(function () {
+  console.log("clicked")
+  $(.hide).hide('magictime puffIn');
+});

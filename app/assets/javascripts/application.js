@@ -29,23 +29,23 @@ $(document).ready(function(){
 
 
 
-function getquotes(){
-var settings = {
-  "crossDomain": true,
-  "url": "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/UK/anywhere/anytime/anytime?apiKey=od357280409789380362594759932174",
-  "method": "GET",
-  "headers": {
-    "cache-control": "no-cache"
-  }
-}
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-console.log('ok')
-}
+// function getquotes(){
+// var settings = {
+//   "crossDomain": true,
+//   "url": "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/UK/anywhere/anytime/anytime?apiKey=od357280409789380362594759932174",
+//   "method": "GET",
+//   "headers": {
+//     "cache-control": "no-cache"
+//   }
+// }
+// $.ajax(settings).done(function (response) {
+//   console.log(response);
+// });
+// console.log('ok')
+// }
 
-getquotes()
-console.log("ork")
+// getquotes()
+// console.log("ork")
 
 var slideIndex = 1;
 showDivs(slideIndex);

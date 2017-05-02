@@ -38,13 +38,12 @@
  <a class="anav" style=" padding:20px; word-spacing: 10px; text-decoration: none; color: black; font-family: avenir " href="/"> Home </a>
  <a class="anav" style="word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href="">
 
-  Locations
-</a>
-<a  style=" word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> About </a>
-<a href="/users"><img id = "profile-icon" src="https://68.media.tumblr.com/5d025161f0f362f0f37a4c36eed5e152/tumblr_oo85afcHW91qerjyso1_250.png">
-</a>
-<h1 class = "logo">Odyssey</h1>
-</nav>
+    </a>
+   <a  style=" word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href=""> About </a>
+   <a href="/users/#{user_id}"><img id = "profile-icon" src="https://68.media.tumblr.com/5d025161f0f362f0f37a4c36eed5e152/tumblr_oo85afcHW91qerjyso1_250.png">
+   </a>
+   <h1 class = "logo">Odyssey</h1>
+ </nav>
 
 <div class="date_picker">
 
@@ -54,12 +53,13 @@
    Flight return:
    <input type="date" name="flight_return">
 
-   <input type="submit">
- </form>
-</div><br>
+
+     <input class="date_button"type="submit">
+   </form>
+ </div><br>
 
 
-
+<div id="hide">
 <div id="ed">
  <img class="le-tour-eiffel" src= <%=image_path('le-tour-eiffel.jpg')%> width="500px"  align="left">
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -143,6 +143,6 @@
 <%= render 'layouts/comments.html.erb' %>
 
 
-
+</div>
 
 </div>
