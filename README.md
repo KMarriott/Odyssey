@@ -12,7 +12,7 @@ Browse our locations and sign up for an account to gain access to our exclusive 
 ************************************
 MoCSoW
 
-Must have:
+MUST have:
 
 
   *Database with users, locations, and comments (at least 2 models)
@@ -31,12 +31,12 @@ Must have:
   
   *Gems
   
-Could have:
+COULD have:
   
   
    *Event API
    
-Should have:
+SHOULD have:
   
   
    *Facebook login capabilities
@@ -44,7 +44,7 @@ Should have:
    *Passport info upload
    
    
-Would have:
+WOULD have:
 
 
    *ICE info--cards, etc.
@@ -63,10 +63,14 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+Rails 5.0.2
 
 * System dependencies
 
 Ruby Gems Used:
+Paperclip-
+Cloudinary-
+Bootstrap-Sass 3.2.0
 Geocoder - for Getting Locations - http://www.rubygeocoder.com/
 HTTParty - for calling API - 
 skyscanner - Ruby gem for calling skyscanner API - https://github.com/axic/skyscanner
