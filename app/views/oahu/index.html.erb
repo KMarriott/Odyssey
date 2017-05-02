@@ -11,15 +11,15 @@
    <!-- Wrapper for slides -->
    <div class="carousel-inner full-screen">
      <div class="item active">
-     <img class="center-block img-fluid full-screen" src="https://68.media.tumblr.com/12c5f33ffa9a36b2524a215913ee0706/tumblr_op2xhfqRfi1qerjyso1_1280.png" alt="First slide">
+     <img class="center-block img-fluid full-screen" src="<%=image_path('Oahu-2.png')%>" alt="first slide">
      </div>
 
      <div class="item">
-     <img class="center-block img-fluid full-screen" src="<%=image_path('paris-photo-2.png')%>" alt="second slide">
+     <img class="center-block img-fluid full-screen" src="<%=image_path('Oahu-2.png')%>" alt="second slide">
      </div>
 
      <div class="item">
-     <img class="center-block img-fluid full-screen" src="<%=image_path('paris-photo-3.png')%>" alt="Third slide">
+     <img class="center-block img-fluid full-screen" src="<%=image_path('oahu-3.png')%>" alt="Third slide">
      </div>
    </div>
 
@@ -47,65 +47,93 @@
    <h1 class = "logo">Odyssey</h1>
  </nav>
 
- <div class="date_picker">
+ <div class="row">
+  <div class="col-lg-6 col-lg-offset-3 text-center">
+   <div class="date_picker">
 
-   <form action="/trips" method='POST'>
-     Flight leave:
-     <input type="date" name="flight_leave" value="">
-     Flight return:
-     <input type="date" name="flight_return">
+     <form action="/trips" method='POST'>
+       Flight leave:
+       <input type="date" name="flight_leave" value="">
+       Flight return:
+       <input type="date" name="flight_return">
 
-     <input type="submit">
-   </form>
- </div><br>
-
-
-
-<div id="ed">
- <img class="le-tour-eiffel" src= <%=image_path('le-tour-eiffel.jpg')%> width="500px"  align="left">
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
- <img class="merci-car" src= <%=image_path('merci.jpg')%> width="500px"  align="right">
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-
-
-
-
-<form action='/oahu' method='POST'>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-     <input name='name' type="text"value=" luke "><br>
-     <input name='image' type="text"value=" luke "><br>
-     <input name='flight_date' type="text"value=" luke "><br>
-     <input name='address' type="text"value=" luke "><br>
-     <input name='profile_image' type="text"value=" luke "><br>
-
-
-<div id="flights">
-<div class="row">
-  <div class="col-md-5 col-md-offset-5">
-      <% @oahu.each do |sky| %>
-        <h4> oahu DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
-    <h6>  Price: <%= sky["MinPrice"] %></h6>
-      Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
-      direct <%= sky["Direct"] %>
-
-
-      <div class="form-check">
-  <label class="form-check-label">
-  Save flight: <input name='flight' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>"><br>
-
-
-  </label>
-</div>
-    <% end %>
+       <input type="submit">
+     </form>
+   </div><br>
   </div>
 </div>
+
+
+<div id="hide">
+<div id="ed">
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 text-center">
+    <form action='/oahu' method='POST'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <h3> Type your name here for your profile!</h3><input name='name' type="text"value=" Name "><br>
+    </form>
+  </div>
 </div>
+
+ <img class="le-tour-eiffel" src= <%=image_path('climbworks.jpg')%> width="500px"  align="left">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+ <img class="merci-car" src= <%=image_path('scuba.jpg')%> width="500px"  align="right">
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+
+         
+<center>
+<h2>Packing List</h2>
+ <div>
+    <%=render 'widget_oahu_cool.index.html.erb'%>
+  </div>
+ </center>
+
+<center>
+<h2>Flights</h2>
+<!-- <div id="flights"> -->
+<div class="row">
+  <div class="flight_box">
+    <div class="col-md-6">
+      <% @oahu.each do |sky| %>
+        <p> Oahu Arrival Date: <%= sky["OutboundLeg"]["DepartureDate"] %>
+        Price: <%= sky["MinPrice"] %>
+        Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %>
+        direct <%= sky["Direct"] %></p> 
+      <div class="form-check">
+      <label class="form-check-label">
+      Save flight: <input name='flight' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>">
+      </label>
+      </div>
+      <% end %>
+    </div>
+    </div>
+
+  <div class="flight_box">
+    <div class="col-md-6">
+      <% @oahu.each do |sky| %>
+        <p> Oahu Arrival Date: <%= sky["OutboundLeg"]["DepartureDate"] %>
+        Price: <%= sky["MinPrice"] %>
+        Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %>
+        direct <%= sky["Direct"] %></p> 
+      <div class="form-check">
+      <label class="form-check-label">
+      Save flight: <input name='flight' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>">
+      </label>
+      </div>
+      <% end %>
+    </div>
+    </div>
+
+    </div>
+</center>
 
 
 
@@ -113,10 +141,14 @@
   <div class="col-md-8 col-md-offset-3">
     <div class="eventful">
       <% @eventful.each do |eventful| %>
-        Title: <%= eventful["title"] %><br>
-        Time: <%= primary_time(eventful) %><br>
-        Address <%= primary_address(eventful) %><br>
+        <%= eventful["title"] %><br>
+        <%= eventful["description"] %><br>
+        Address <a href=''> <%= primary_address(eventful) %> </a><br>
+         <a href="<%= eventful["url"] %>">Learn More</a><br>
+         <%= eventful["latitude"] %><br>
+        <%= eventful["longitude"] %>
 
+         <a href="https://wwww.google.com/maps/@<%= eventful["longitude"] %>,<%= eventful["latitude"] %>,15z">maps</a>
         <br>
       <% end %>
     </div>
@@ -182,4 +214,5 @@
 
 
 
+</div>
 </div>

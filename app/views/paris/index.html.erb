@@ -46,20 +46,24 @@
    <h1 class = "logo">Odyssey</h1>
  </nav>
 
- <div class="date_picker">
+ <div class="row">
+  <div class="col-lg-6 col-lg-offset-3 text-center">
+   <div class="date_picker">
 
-   <form action="/trips" method='POST'>
-     Flight leave:
-     <input type="date" name="flight_leave" value="">
-     Flight return:
-     <input type="date" name="flight_return">
+     <form action="/trips" method='POST'>
+       Flight leave:
+       <input type="date" name="flight_leave" value="">
+       Flight return:
+       <input type="date" name="flight_return">
 
-     <input type="submit">
-   </form>
- </div><br>
+       <input type="submit">
+     </form>
+   </div><br>
+  </div>
+</div>
 
 
-
+<div hide="hide">
 <div id="ed">
  <img class="le-tour-eiffel" src= <%=image_path('le-tour-eiffel.jpg')%> width="500px"  align="left">
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -186,5 +190,5 @@
 
 
 
-
+</div>
 </div>

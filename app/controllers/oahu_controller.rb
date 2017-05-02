@@ -9,11 +9,11 @@ class OahuController < ApplicationController
     @eventful = @eventful["events"]["event"]
 
     Skyscanner::Connection.apikey = "od357280409789380362594759932174"
-    sky = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "US", :destinationPlace => "anywhere", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
-    @sky = sky.values.first[0..4]
+    sky = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "US", :destinationPlace => "US", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
+    @sky = sky.values.first[0..0]
 
-    oahu = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "FR", :destinationPlace => "JFK", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
-    @oahu = sky.values.first[0..4]
+    oahu = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "JFK", :destinationPlace => "US", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
+    @oahu = sky.values.first[0..0]
 
     @oahu_depart =  @oahu[0]["OutboundLeg"]["DepartureDate"]
 
@@ -40,10 +40,10 @@ class OahuController < ApplicationController
 
     Skyscanner::Connection.apikey = "od357280409789380362594759932174"
     sky = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "US", :destinationPlace => "anywhere", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
-    @sky = sky.values.first[0..4]
+    @sky = sky.values.first[0..1]
 
     oahu = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "FR", :destinationPlace => "JFK", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
-    @oahu = sky.values.first[0..4]
+    @oahu = sky.values.first[0..1]
 
     @oahu_depart =  @oahu[0]["OutboundLeg"]["DepartureDate"]
 
