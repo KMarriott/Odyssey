@@ -15,10 +15,11 @@ class ParisController < ApplicationController
     paris = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "FR", :destinationPlace => "JFK", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
     @paris = sky.values.first[0..4]
 
-    @paris_depart =  @paris[0]["OutboundLeg"]["DepartureDate"]
+    @paris_depart =  @paris[0]["OutboundLeg"]["DepartureDate"][0..9]
 
     @comments = Comment.all
   end
+  
   def show
       @users = User.find_by(id: params[:id])
 
@@ -54,7 +55,7 @@ class ParisController < ApplicationController
       else
       render 'edit'
     end
-      redirect_to "/rocks"
+      redirect_to :back
     end
 
 end
