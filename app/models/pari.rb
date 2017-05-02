@@ -1,0 +1,2 @@
+class Pari < ApplicationRecord
+end

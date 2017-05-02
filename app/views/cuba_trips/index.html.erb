@@ -76,26 +76,20 @@
 
 
 
-
-<form action='/paris' method='POST'>
+<form action='/cuba_trips' method='POST'>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-     <input name='name' type="text"value=" name "><br>
-     <input name='image' type="text"value=" image "><br>
-     <input name='flight_date' type="text"value=" flight_date "><br>
-     <input name='address' type="text"value=" address "><br>
-     <input name='profile_image' type="text"value="profile_image "><br>
-
-
-
-
-
+     <input name='name' type="text"value=" luke "><br>
+     <input name='image' type="text"value=" luke "><br>
+     <input name='flight_date' type="text"value=" luke "><br>
+     <input name='address' type="text"value=" luke "><br>
+     <input name='profile_image' type="text"value=" luke "><br>
 
 
 <div id="flights">
 <div class="row">
   <div class="col-md-5 col-md-offset-5">
-      <% @paris.each do |sky| %>
-        <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
+      <% @cuba.each do |sky| %>
+        <h4> cuba DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
     <h6>  Price: <%= sky["MinPrice"] %></h6>
       Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
       direct <%= sky["Direct"] %>
@@ -120,6 +114,7 @@
     <div class="eventful">
       <% @eventful.each do |eventful| %>
         Title: <%= eventful["title"] %><br>
+        Time: <%= primary_time(eventful) %><br>
         Address <%= primary_address(eventful) %><br>
 
         <br>
@@ -167,7 +162,7 @@
 <form action='/comments' method='POST'>
   add a comp: <br>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  place: <input name='place' value="paris"><br>
+  place: <input name='place' value="cuba"><br>
   comment: <input name='comment' type="this is the comment"><br>
   <input name='user_id' value="<%= @user.id %>"><br>
   <button class="btn btn-primary btn-lg">Submit</button>
