@@ -70,10 +70,8 @@ ActiveRecord::Schema.define(version: 20170501212352) do
     t.string   "flight_date"
     t.string   "address"
     t.string   "profile_image"
-    t.integer  "users_id"
     t.integer  "user_id"
     t.index ["user_id"], name: "index_paris_on_user_id", using: :btree
-    t.index ["users_id"], name: "index_paris_on_users_id", using: :btree
   end
 
   create_table "trips", force: :cascade do |t|
