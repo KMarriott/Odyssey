@@ -3,13 +3,19 @@ Odyssey- a centralized planning app for trips
 
 Research and store all of your trip flights, accomodations and events all in one place. Upload scans of your important documents and cards just in case. We even have destination specific suggestions for gear, and insider information for the hottest destinations.
 
+*************************************
+
+User story
+
+Browse our locations and sign up for an account to gain access to our exclusive content on destinations, flights, events, things to see and do, and gear to bring on your trip.
+
 ************************************
 MoCSoW
 
 Must have:
 
 
-  *Database with users, locations, and comments
+  *Database with users, locations, and comments (at least 2 models)
 
   *Crud
 
@@ -17,11 +23,13 @@ Must have:
 
   *API's :Air BnB, SkyScanner, ShopStyle Collective
 
-  *Authorization via Devise
+  *Authentication with Devise
 
   *Deploy to Heroku
 
   *Wireframe
+  
+  *Gems
   
 Could have:
   
