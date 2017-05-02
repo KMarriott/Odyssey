@@ -20,6 +20,11 @@ $(document).ready(function(){
 
 	$('.carousel').carousel();
 
+  $('.date_clicker_button').on('click', function(){
+    event.preventDefault(); 
+    getquotes()
+    $('#hide').show()
+  })
 
   // $('.dropdown-menu').dropdown()
   // $('.dropdown-toggle').dropdown()
@@ -29,23 +34,52 @@ $(document).ready(function(){
   });
 
 
-// function getquotes(){
-// var settings = {
-//   "crossDomain": true,
-//   "url": "http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/UK/anywhere/anytime/anytime?apiKey=od357280409789380362594759932174",
-//   "method": "GET",
-//   "headers": {
-//     "cache-control": "no-cache"
-//   }
-// }
-// $.ajax(settings).done(function (response) {
-//   console.log(response);
-// });
-// console.log('ok')
-// }
+function getquotes(){
+  var arrival = $('.flight_leave').val()
+  var departure = $('.flight_return').val()
 
-// getquotes()
-// console.log("ork")
+  if(arrival === "")
+  {
+    arrival = "anytime"
+  }
+    if(departure === "")
+  {
+    departure = "anytime"
+  }
+
+  console.log(arrival + " " + departure)
+  
+  data =  {
+      "arrival": arrival,
+      "departure": departure
+    }
+
+  var settings = {
+    "crossDomain": true,
+    "url": "/skyscanner",
+    "data": data,
+    "method": "GET",
+    "headers": {
+      "cache-control": "no-cache"
+    }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response)
+    $.each(response, function(one){
+      //Departure Date
+      console.log(response[one]["OutboundLeg"]["DepartureDate"].substring(0, 10))
+      //Price:
+      console.log(response[one]["MinPrice"])
+      // Carrier Id:
+      console.log(response[one]["InboundLeg"]["CarrierIds"])
+      // direct 
+      console.log(response[one]["Direct"])
+    }
+      )
+
+  });
+}
 
 var slideIndex = 1;
 showDivs(slideIndex);

@@ -3,26 +3,18 @@
   <center>
     <form action='/comments' method='POST'>
       add a comp: <br>
-      
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      place: <input name='place' value="paris"><br>
       comment: <input name='comment' type="this is the comment"><br>
-      
       <button class="btn btn-primary btn-lg">Submit</button>
     </form>
 
 
     <% @comments.each do |comment| %>
-
     <div class="card-block">
-
       <img src="http://i.imgur.com/DGn5YWT.jpg" width="100"  align="left">
-
-      <h4 class="card-title">User Id: <%= comment.user_id %></h4>
-
-      <p class="card-text"> Comment: <%= comment['comment'] %></p>
-      
-      <br>
-      
+      <h4 class="card-title">User Id: <%= @user.id %></h4>
+      <p class="card-text"> Comment: <%= comment['comment'] %></p><br>
       <%= link_to "Remove Comment", comment, method: :delete %><br>
 
     </div>

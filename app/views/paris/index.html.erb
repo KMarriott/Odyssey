@@ -41,15 +41,7 @@
    <h1 class = "logo">Odyssey</h1>
 </nav>
 
-<div class="date_picker">
- <form action="/trips" method='POST'>
-   Flight leave:
-   <input type="date" name="flight_leave" value="">
-   Flight return:
-   <input type="date" name="flight_return">
-   <input class="date_button"type="submit">
-  </form>
-</div>
+<%= render 'layouts/date_picker.html.erb' %>
 
 
 
