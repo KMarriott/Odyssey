@@ -1,0 +1,15 @@
+<%=users_path%>
+
+
+<%= form_for @images, url: '/image', html: { multipart: true } , action: 'create' do |form| %>
+
+  <%= form.file_field :avatar %>
+
+
+  <div class="actions">
+    <%= form.submit 'Add image' %>
+  </div>
+
+<% end %>
+
+

@@ -21,58 +21,279 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
+  position: absolute;
 }
 
 .logo {
-	text-align: center; 
-	font-family: Avenir; 
+	text-align: center;
+	font-family: Avenir;
+
+  width: 142px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .nav  {
-
+ 	padding-top: 20px;
     font-size: 20px;
     padding-left: 20px;
-   
+}
 
+.navbar-text{
+  margin-top: 8px;
 }
 
 .viewmore {
 
-	text-align: center;
-    top: 50%;
-    left: 50%;
-	
+	margin: 0 auto;
+	z-index: 3;
+
 }
 
 #profile-icon {
 
 	width: 40px;
 	height: 40px;
-	float: right; 
-	margin-top: 20px;
-	margin-right: 20px; 
+    clear: both;
+	float: right;
+	margin-right: 35px;
 
 }
 
-.carousel { 
-
-	position:absolute; 
-	width:100%; 
-	height:100%; 	
-	z-index: -99; 
-
-	} 
+.carousel {
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index: -99;
+	}
 
 .buttonwrapper {
-
 	position: absolute;
 	bottom: 30px;
 	left:41%;
 	padding-bottom: 30px
-
 	}
+
+  .carousel-indicators {
+
+    margin-left: auto;
+    margin-right: auto;
+    // margin-bottom: 20%;
+    // border: 5px dotted red;
+
+  }
+
+.carousel-caption {
+
+  font-family: "Avenir" ;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  text-decoration-color: black;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  top: 0px;
+  margin-top: 33%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  // text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.moreinfo {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: black;
+}
 
 .carousel-control.left, .carousel-control.right {
    background-image: none
 }
 
+.profile-on-boarding {
+	font-family: avenir;
+}
+
+.letter-head {
+	font-family: black diamond;
+}
+
+.clearfix {
+	float: right;
+	width: 621px;
+	padding-top:30px;
+
+}
+
+.width-of-content{
+	width: 950px;
+	margin-left: 160px;
+	margin-right: 160px;
+}
+
+.yourtrips{
+	font-family: Avenir;
+	text-align: Center;
+
+}
+
+.borderbottom{
+	border-bottom: 1px solid;
+	width: 115px;
+	margin-left:417px;
+
+}
+
+.user-appended-icons {
+	padding-top: 30px;
+}
+.icon {
+	padding: 30px;
+}
+
+.left .carousel-control{
+	margin-top: 30 px;
+}
+
+.right .carousel-control{
+	margin-top: 30 px;
+}
+
+.navbar-text.pull-right {
+	text-align:center;
+}
+
+.carousel-indicators {
+	margin: 0 auto;
+}
+
+
+
+#flights {
+  margin-left: 10px;
+}
+
+
+#ed {
+	margin-top: 45%;
+	padding: 20px;
+	//position: absolute;
+}
+
+.merci-car {
+	padding: 20px;
+}
+
+
+.flightform {
+	display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+
+.return {
+	float: right;
+}
+
+.outbound {
+	width: 156px;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.round-trip-arrows {
+	float: right;
+}
+
+.skyscannerwidget {
+	width: 800px;
+	margin-left: 20%;
+}
+
+.center_div {
+	text-align:center;
+}
+
+
+#flights {
+  margin-left: 10px;
+}
+
+
+
+.date_picker {
+  margin-left: 98px;
+	position: absolute;
+	margin-top: 600px;
+
+}
+
+.eventful {
+  margin-left: 10px;
+}
+
+.input {
+  width: 10px;
+}
+.this{
+	position: absolute;
+}
+#hide{
+ display: none;
+}
+.flight_box{
+	width: 400px;
+
+}
+.flight_box2{
+	width: 200px;
+
+}
+
+h2{
+	font-family: Avenir-book;
+	font-size: 60px;
+}
+
+#hide{
+	display: none;
+}
+.events{
+
+	margin-left: 650px;
+
+
+}
+#form_sub{
+	margin-left: 735px;
+	margin-top: 626px;
+}
+.textbox{
+	width: 200px;
+	height: 150px;
+}

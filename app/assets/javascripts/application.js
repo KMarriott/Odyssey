@@ -20,4 +20,81 @@ $(document).ready(function(){
 
 	$('.carousel').carousel();
 
-});
+  $('.date_clicker_button').on('click', function(){
+    event.preventDefault(); 
+    getquotes()
+    $('#hide').show()
+  })
+
+  // $('.dropdown-menu').dropdown()
+  // $('.dropdown-toggle').dropdown()
+  $('.dropdown-menu').dropdown('toggle')
+    // $('.dropdown-menu').dropdown()
+
+  });
+
+
+function getquotes(){
+  var arrival = $('.flight_leave').val()
+  var departure = $('.flight_return').val()
+
+  if(arrival === "")
+  {
+    arrival = "anytime"
+  }
+    if(departure === "")
+  {
+    departure = "anytime"
+  }
+
+  console.log(arrival + " " + departure)
+  
+  data =  {
+      "arrival": arrival,
+      "departure": departure
+    }
+
+  var settings = {
+    "crossDomain": true,
+    "url": "/skyscanner",
+    "data": data,
+    "method": "GET",
+    "headers": {
+      "cache-control": "no-cache"
+    }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response)
+    $.each(response, function(one){
+      //Departure Date
+      console.log(response[one]["OutboundLeg"]["DepartureDate"].substring(0, 10))
+      //Price:
+      console.log(response[one]["MinPrice"])
+      // Carrier Id:
+      console.log(response[one]["InboundLeg"]["CarrierIds"])
+      // direct 
+      console.log(response[one]["Direct"])
+    }
+      )
+
+  });
+}
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}

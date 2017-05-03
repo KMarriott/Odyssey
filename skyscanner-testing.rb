@@ -49,5 +49,4 @@ request = url + "apiKey=#{apiKey}"
 #Getting quotes
 Skyscanner::Connection.apikey = apiKey
 
-p Skyscanner::Connection.browse_quotes({ :country => "GB", :currency => "GBP", :locale => "en-GB", :originPlace => "UK", :destinationPlace => "13", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
-
+p Skyscanner::Connection.browse_quotes({ :country => "GB", :currency => "GBP", :locale => "en-GB", :originPlace => "UK", :destinationPlace => "anywhere", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
