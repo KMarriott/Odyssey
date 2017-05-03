@@ -5,7 +5,7 @@ module TripsHelper
   end
 
   def  primary_time(response)
-      response = response["stop_time"] || "forever"
+      response = response["start_time"] || "forever"
   end
 
   def  primary_address(response)

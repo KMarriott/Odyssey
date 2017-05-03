@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-5 col-md-offset-5">
       <% @paris.each do |sky| %>
-      <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"] %></h4>
+      <h4> Paris DepartureDate: <%= sky["OutboundLeg"]["DepartureDate"][0..9] %></h4>
       <h6>  Price: <%= sky["MinPrice"] %></h6>
       Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %><br>
       direct <%= sky["Direct"] %>

@@ -18,6 +18,7 @@ class TripsController < ApplicationController
     @paris_depart =  @paris[0]["OutboundLeg"]["DepartureDate"]
 
     @comments = Comment.all
+    @place = "trips"
   end
   def show
       # @users = User.find_by(id: params[:id])
