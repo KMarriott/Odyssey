@@ -17,13 +17,8 @@
 
 		<div class="clearfix">
 
-			<h1 class="letter-head">
-				<% if @user_trips_oahu %>
-				<% @user_trips_oahu.each do |x| %>
-				<%= x.name %>
-				<br><br>
-				<% end %>
-				<% end %></h1>
+			<h1 class="letter-head">Hello,
+			</h1>
 				<p class= "profile-on-boarding">Here you can save all your trip prefrences and dates to have easy access to them when you are on the road! You can also upload photos of any important documentation you might want to have as digital copy in case of emergency. </p>
 
 
@@ -62,8 +57,11 @@
 					<b>Flight Date:</b> <%= x.flight_date %><br>
 					<b>Lodging:</b> <%= x.address %>
 					<br><br>
+						
+						
 					<% end %>
 					<% end %>
+					<a class="anav" style=" padding:20px; word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href="/oahu/<%= @user_id %>">edit</a>
 				</div>
 
 				<div class="col-md-4">
@@ -76,6 +74,7 @@
 					<br><br>
 					<% end %>
 					<% end %>
+						<a class="anav" style=" padding:20px; word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href="/cuba_trips/<%= @user_id %>">edit</a>
 				</div>
 
 				<div class="col-md-4">
@@ -86,9 +85,13 @@
 					<b> Flight:</b> <%= x.flight %><br>
 					<b> Flight Date:</b> <%= x.flight_date %><br>
 					<b>Lodging:</b> <%= x.address %><br>
+
 					<br><br>
 					<% end %>
+					
 					<% end %>
+					<a class="anav" style=" padding:20px; word-spacing: 30px; text-decoration: none; color: black; font-family: avenir " href="/oahu/<%= @user_id %>">edit</a>
+
 				</div>
 			</div>
 

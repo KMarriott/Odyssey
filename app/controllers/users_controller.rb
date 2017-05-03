@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @Users=User.new
     @images = Image.all
     @image = Image.new
+    @user_id = params[:id]
+
 
   end
 

@@ -263,9 +263,7 @@ a:active {
 .this{
 	position: absolute;
 }
-#hide{
- display: none;
-}
+
 .flight_box{
 	width: 400px;
 
@@ -280,20 +278,23 @@ h2{
 	font-size: 60px;
 }
 
-#hide{
-	display: none;
-}
+
 .events{
-
 	margin-left: 650px;
-
 
 }
 #form_sub{
 	margin-left: 735px;
-	margin-top: 626px;
+	margin-top: 726px;
 }
 .textbox{
 	width: 200px;
 	height: 150px;
+}
+#please{
+	margin-top: -500px;
+}
+.signup{
+	margin-top: -400px;
+	color: #fff;
 }

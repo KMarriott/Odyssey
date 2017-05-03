@@ -41,7 +41,7 @@ class OahuController < ApplicationController
     eventful = HTTParty.get('http://api.eventful.com/json/events/search?location=Gainesville,fl&app_key=sZH3jKCFNTDRW7xC&image_sizes=large')
     @eventful = JSON.parse(eventful)
     @eventful = @eventful["events"]["event"]
-    @eventful = event.values.first[0..1]
+
 
     Skyscanner::Connection.apikey = "od357280409789380362594759932174"
     sky = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "US", :destinationPlace => "anywhere", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })

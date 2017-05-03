@@ -66,17 +66,13 @@ function getquotes(){
 
   $.ajax(settings).done(function (response) {
     console.log(response)
-    $.each(response, function(one){
-      //Departure Date
-      console.log(response[one]["OutboundLeg"]["DepartureDate"].substring(0, 10))
-      //Price:
-      console.log(response[one]["MinPrice"])
-      // Carrier Id:
-      console.log(response[one]["InboundLeg"]["CarrierIds"])
-      // direct 
-      console.log(response[one]["Direct"])
-    }
-      )
+$("p.DepartureDate").text(response[0]["OutboundLeg"]["DepartureDate"].substring(0, 10))
+     //Price:
+     $("p.Price").text(response[0]["MinPrice"])
+     // Carrier Id:
+     $("p.Carrier_id").text(response[0]["InboundLeg"]["CarrierIds"])
+     // direct
+     $("p.Direct").text(response[0]["Direct"])
 
   });
 }

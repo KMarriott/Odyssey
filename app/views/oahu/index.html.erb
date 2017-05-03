@@ -60,7 +60,7 @@
        Flight return:
        <input type="date" name="flight_return">
 
-       <input type="submit">
+       <input class="date_clicker_button" type="submit">
      </form>
    </div><br>
 
@@ -70,12 +70,13 @@
 <!-- <div id="hide"> -->
 <div id="ed">
 
+
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 text-center">
     <form action='/oahu' method='POST'>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <h3> Type your name here for your profile!</h3><input name='name' type="text"value=" Name "><br>
-    </form>
+  
   </div>
 </div>
 
@@ -106,10 +107,10 @@
   <div class="flight_box">
     <div class="col-md-6">
       <% @oahu.each do |sky| %>
-        <p> Oahu Arrival Date: <%= sky["OutboundLeg"]["DepartureDate"] %>
-        Price: <%= sky["MinPrice"] %>
-        Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %>
-        direct <%= sky["Direct"] %></p>
+<p> Oahu Arrival Date: <p class="DepartureDate"> ok</p>
+       Price: <p class="Price"><%= sky["MinPrice"] %></p>
+       Carrier Id: <p class="Carrier_id"><%= sky["InboundLeg"]["CarrierIds"] %></p>
+       direct <p class="Direct"><%= sky["Direct"] %></p></p>
       <div class="form-check">
       <label class="form-check-label">
       Save flight: <input name='flight' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>">
@@ -145,7 +146,7 @@
 <div class="row">
   <div class="col-sm-6 col-md-4">\
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="<%=path_to_image('oahu_event.jpg')%>" alt="...">
       <div class="caption">
         <h3><%= @eventful["title"] %><br></h3>
         <p> <%= @eventful["description"] %><br></p>
@@ -188,8 +189,9 @@
         </ul>
       </center>
     </div>
+
   </div>
-  <button id="form_sub" class="btn btn-primary btn-lg">Submit</button>
+  <button class="btn btn-primary btn-lg">Submit</button>
 </form>
 
 
