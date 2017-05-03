@@ -107,6 +107,7 @@
   <div class="flight_box">
     <div class="col-md-6">
       <% @oahu.each do |sky| %>
+
 <p> Oahu Arrival Date: <p class="DepartureDate"> ok</p>
        Price: <p class="Price"><%= sky["MinPrice"] %></p>
        Carrier Id: <p class="Carrier_id"><%= sky["InboundLeg"]["CarrierIds"] %></p>
@@ -144,7 +145,7 @@
 
 <div class="events">
 <div class="row">
-  <div class="col-sm-6 col-md-4">\
+  <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img src="<%=path_to_image('oahu_event.jpg')%>" alt="...">
       <div class="caption">
@@ -191,7 +192,7 @@
     </div>
 
   </div>
-  <button class="btn btn-primary btn-lg">Submit</button>
+  <button id="moveleft" class="btn btn-primary btn-lg">Submit</button>
 </form>
 
 

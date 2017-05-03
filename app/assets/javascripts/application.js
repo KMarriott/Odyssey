@@ -66,6 +66,7 @@ function getquotes(){
 
   $.ajax(settings).done(function (response) {
     console.log(response)
+
 $("p.DepartureDate").text(response[0]["OutboundLeg"]["DepartureDate"].substring(0, 10))
      //Price:
      $("p.Price").text(response[0]["MinPrice"])
@@ -73,6 +74,65 @@ $("p.DepartureDate").text(response[0]["OutboundLeg"]["DepartureDate"].substring(
      $("p.Carrier_id").text(response[0]["InboundLeg"]["CarrierIds"])
      // direct
      $("p.Direct").text(response[0]["Direct"])
+
+    // $.each(response, function(one){
+
+    //   //$('')
+
+    //   //Departure Date
+    //   console.log(response[one]["OutboundLeg"]["DepartureDate"].substring(0, 10))
+    //   //Price:
+    //   console.log(response[one]["MinPrice"])
+    //   // Carrier Id:
+    //   console.log(response[one]["InboundLeg"]["CarrierIds"])
+    //   // direct 
+    //   console.log(response[one]["Direct"])
+    // })
+
+      //Departure Date
+      $("p.DepartureDate").text(response[0]["OutboundLeg"]["DepartureDate"].substring(0, 10))
+      //Price:
+      $("p.Price").text(response[0]["MinPrice"])
+      // Carrier Id:
+      $("p.Carrier_Id").text(response[0]["InboundLeg"]["CarrierIds"])
+      // direct 
+      $("p.direct").text(response[0]["Direct"])
+
+  });
+}
+
+
+function getevents(){
+ 
+  data =  {
+      "arrival": arrival,
+      "departure": departure
+    }
+
+  var settings = {
+    "crossDomain": true,
+    "url": "/skyscanner",
+    "data": data,
+    "method": "GET",
+    "headers": {
+      "cache-control": "no-cache"
+    }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response)
+    $.each(response, function(one){
+      //Departure Date
+      console.log(response[one]["OutboundLeg"]["DepartureDate"].substring(0, 10))
+      //Price:
+      console.log(response[one]["MinPrice"])
+      // Carrier Id:
+      console.log(response[one]["InboundLeg"]["CarrierIds"])
+      // direct 
+      console.log(response[one]["Direct"])
+    }
+      )
+
 
   });
 }
