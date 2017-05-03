@@ -106,10 +106,10 @@
   <div class="flight_box">
     <div class="col-md-6">
       <% @oahu.each do |sky| %>
-        <p> Oahu Arrival Date: <%= sky["OutboundLeg"]["DepartureDate"] %>
-        Price: <%= sky["MinPrice"] %>
-        Carrier Id: <%= sky["InboundLeg"]["CarrierIds"] %>
-        direct <%= sky["Direct"] %></p>
+        <p> Oahu Arrival Date: <p class="DepartureDate"> ok</p>
+        Price: <p class="Price"><%= sky["MinPrice"] %></p>
+        Carrier Id: <p class="Carrier_id"><%= sky["InboundLeg"]["CarrierIds"] %></p>
+        direct <p class="Direct"><%= sky["Direct"] %></p></p>
       <div class="form-check">
       <label class="form-check-label">
       Save flight: <input name='flight' type="checkbox"value="<%= sky["OutboundLeg"]["DepartureDate"] %>">
