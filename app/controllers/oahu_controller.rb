@@ -1,12 +1,16 @@
 class OahuController < ApplicationController
   def index
     @user = current_user
-    @response = HTTParty.get('https://api.airbnb.com/v2/search_results?client_id=d306zoyjsyarp7ifhu67rjxn52tv0t20&locale=en-US&currency=USD&_format=for_search_results_with_minimal_pricing&_limit=10&_offset=0&fetch_facets=true&guests=1&ib=false&ib_add_photo_flow=true&location=oahu%2C%20FR%2C%20US&min_bathrooms=0&min_bedrooms=0&min_beds=1&min_num_pic_urls=10&price_max=210&price_min=40&sort=1&user_lat=37.3398634&user_lng=-122.0455164')
+    @response = HTTParty.get('https://api.airbnb.com/v2/search_results?client_id=d306zoyjsyarp7ifhu67rjxn52tv0t20&locale=en-US&currency=USD&_format=for_search_results_with_minimal_pricing&_limit=10&_offset=0&fetch_facets=true&guests=1&ib=false&ib_add_photo_flow=true&location=oahu%2C%20hi%2C%20US&min_bathrooms=0&min_bedrooms=0&min_beds=1&min_num_pic_urls=10&price_max=210&price_min=40&sort=1&user_lat=37.3398634&user_lng=-122.0455164')
     @response = @response["search_results"]
 
-    eventful = HTTParty.get('http://api.eventful.com/json/events/search?location=oahu,Fr&app_key=sZH3jKCFNTDRW7xC&image_sizes=large')
+    eventful = HTTParty.get('http://api.eventful.com/json/events/search?location=oahu,hi&app_key=sZH3jKCFNTDRW7xC&image_sizes=large')
     @eventful = JSON.parse(eventful)
-    @eventful = @eventful["events"]["event"]
+    @eventful = @eventful["events"]["event"][0]
+
+
+  
+
 
     Skyscanner::Connection.apikey = "od357280409789380362594759932174"
     sky = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "US", :destinationPlace => "US", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })
@@ -37,6 +41,7 @@ class OahuController < ApplicationController
     eventful = HTTParty.get('http://api.eventful.com/json/events/search?location=Gainesville,fl&app_key=sZH3jKCFNTDRW7xC&image_sizes=large')
     @eventful = JSON.parse(eventful)
     @eventful = @eventful["events"]["event"]
+    @eventful = event.values.first[0..1]
 
     Skyscanner::Connection.apikey = "od357280409789380362594759932174"
     sky = Skyscanner::Connection.browse_quotes({ :country => "US", :currency => "USD", :locale => "en-US", :originPlace => "US", :destinationPlace => "anywhere", :outboundPartialDate => "anytime", :inboundPartialDate => "anytime" })

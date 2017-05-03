@@ -47,6 +47,9 @@
    <h1 class = "logo">Odyssey</h1>
  </nav>
 
+
+
+
  <div class="row">
   <div class="col-lg-6 col-lg-offset-3 text-center">
    <div class="date_picker">
@@ -60,11 +63,11 @@
        <input type="submit">
      </form>
    </div><br>
-  </div>
+
 </div>
 
 
-<div id="hide">
+<!-- <div id="hide"> -->
 <div id="ed">
 
 <div class="row">
@@ -99,7 +102,7 @@
 <center>
 <h2>Flights</h2>
 <!-- <div id="flights"> -->
-<div class="row">
+
   <div class="flight_box">
     <div class="col-md-6">
       <% @oahu.each do |sky| %>
@@ -135,25 +138,28 @@
     </div>
 </center>
 
+<center><h2>Events</h2></center>
 
 
+<div class="events">
 <div class="row">
-  <div class="col-md-8 col-md-offset-3">
-    <div class="eventful">
-      <% @eventful.each do |eventful| %>
-        <%= eventful["title"] %><br>
-        <%= eventful["description"] %><br>
-        Address <a href=''> <%= primary_address(eventful) %> </a><br>
-         <a href="<%= eventful["url"] %>">Learn More</a><br>
-         <%= eventful["latitude"] %><br>
-        <%= eventful["longitude"] %>
-
-         <a href="https://wwww.google.com/maps/@<%= eventful["longitude"] %>,<%= eventful["latitude"] %>,15z">maps</a>
-        <br>
-      <% end %>
+  <div class="col-sm-6 col-md-4">\
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3><%= @eventful["title"] %><br></h3>
+        <p> <%= @eventful["description"] %><br></p>
+        <p>  </p>
+        <a href="<%= @eventful["url"] %>" class="btn btn-primary" role="button">Source</a> 
+        </div>
+        </div>
     </div>
   </div>
 </div>
+
+
+
+
 
 <div class="airSlider"
       <center>
@@ -181,7 +187,7 @@
       </center>
     </div>
   </div>
-  <button class="btn btn-primary btn-lg">Submit</button>
+  <button id="form_sub" class="btn btn-primary btn-lg">Submit</button>
 </form>
 
 
@@ -192,11 +198,12 @@
 <div id="comments">
   <center>
 <form action='/comments' method='POST'>
-  add a comp: <br>
+  add a comment: <br>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  place: <input name='place' value="oahu"><br>
-  comment: <input name='comment' type="this is the comment"><br>
-  <input name='user_id' value="<%= @user.id %>"><br>
+  <input type="hidden" name='place' value="oahu"><br>
+  <input class="textbox" name='comment' type="this is the comment"><br>
+
+  <input  type="hidden" name='user_id' value="<%= @user.id %>"><br>
   <button class="btn btn-primary btn-lg">Submit</button>
 </form>
 
@@ -215,4 +222,4 @@
 
 
 </div>
-</div>
+<!-- </div> -->
