@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     @response = JSON.parse(response)
     @response = @response["events"]["event"]
     @Users=User.new
+    @images = Image.all
+    @image = Image.new
 
   end
 
@@ -15,6 +17,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @images = Image.all
+    @image = Image.new
+
     @user_id = params[:id]
     # if current_user.id  == user
     if User.joins(:paris).where(:id => @user_id)[0]

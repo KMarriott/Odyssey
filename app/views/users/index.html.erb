@@ -16,10 +16,21 @@
   <div class="width-of-content">
 	  <img src="https://68.media.tumblr.com/7683d5405c0612c518fc4948a8d2dd97/tumblr_op6i7lndir1qerjyso1_400.png">
 
+
+
+
 	  <div class="clearfix">
 		  <h1 class="letter-head">Hi Katie!</h1>
 		  <p class= "profile-on-boarding">Here you can save all your trip prefrences and dates to have easy access to them when you are on the road! You can also upload photos of any important documentation you might want to have as digital copy in case of emergency. </p>
 	  </div>
+
+
+  <div class="actions">
+    <%= form.submit 'Add image' %>
+  </div>
+
+<% end %>
+
    <h3 class="yourtrips">Your Trips</h3>
 
    <div class="borderbottom"></div>
@@ -39,6 +50,11 @@
 	        <img class= "icon" src="https://68.media.tumblr.com/0a1627e34fca3b60fb39211a556d12bc/tumblr_op6qroqtBi1qerjyso1_400.png">
 	        
 	        <img class= "icon" src="">
+          <div class=pictures>
+          <% @images.each do |image| %>
+<%= image_tag image.avatar.url(:medium) %>
+  <% end %>
+  </div>
 	   </div>
 
 </body>
